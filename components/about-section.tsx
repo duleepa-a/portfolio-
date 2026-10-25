@@ -37,33 +37,10 @@ export function AboutSection() {
           <div className="space-y-8">
             <div className="space-y-6">
               <p className="text-lg text-foreground leading-relaxed">
-                A self-motivated and hardworking third-year undergraduate with a GPA of 3.82 who strives to gain
-                valuable experience while contributing to organizational goals. Passionate about creating innovative
-                applications and eager to quickly learn and adapt to emerging technologies.
+                Hi, I’m Duleepa, a final-year Computer Science undergraduate at UCSC. I like building things that work well and learning new tools quickly, and I’m always looking for ways to grow while contributing to the teams I work with
               </p>
               <p className="text-lg text-foreground leading-relaxed">
-                Currently preparing for research in the area of code bloating in operating system kernels, with a strong
-                interest in exploring performance optimization and system-level security.
-              </p>
-            </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-4">
-              {stats.map((stat, index) => (
-                <Card key={index} className="bg-background border-border hover:border-accent transition-colors">
-                  <CardContent className="p-6 text-center">
-                    <stat.icon className="w-8 h-8 text-accent mx-auto mb-3" />
-                    <div className="font-heading font-bold text-2xl text-foreground mb-1">{stat.value}</div>
-                    <div className="text-sm text-muted-foreground">{stat.label}</div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-
-            <div className="bg-accent/10 border border-accent/20 rounded-lg p-6">
-              <h3 className="font-heading font-bold text-xl text-foreground mb-3">Current Focus</h3>
-              <p className="text-foreground">
-                Research in OS kernel optimization, performance analysis, and system-level security implementations.
+                Right now my research is on reducing code bloat in operating system kernels. I’m drawn to the low-level side of software, especially performance optimization and system security, and I enjoy digging into how things work under the hood.
               </p>
             </div>
           </div>

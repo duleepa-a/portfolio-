@@ -44,32 +44,30 @@ export function HeroSection() {
   }
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Animated background pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-accent rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-72 h-72 bg-secondary rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-2000"></div>
-        <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-accent rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-4000"></div>
-      </div>
+    <section id="home" className="min-h-[calc(100svh-4rem)] flex flex-col lg:flex-row lg:items-end relative overflow-hidden bg-white lg:bg-card">
+      <div
+        className="hero-background relative w-full aspect-[1677/938] shrink-0 lg:absolute lg:inset-0 lg:aspect-auto pointer-events-none"
+        aria-hidden="true"
+      />
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <div className="space-y-8 animate-fade-in">
+      <div className="w-full px-20 sm:px-22 pt-4 lg:pt-0 pb-8 lg:pb-16 text-left relative z-10">
+        <div className="space-y-5 lg:space-y-8 animate-fade-in">
           <div className="space-y-4">
-            <h2 className="font-heading font-black text-2xl sm:text-4xl lg:text-5xl text-foreground">
+            <h1 className="hero-name font-semibold text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-[0.9] tracking-tight text-accent">
               Duleepa Edirisinghe
-            </h2>
+            </h1>
             <h3 className="font-heading font-semibold text-lg sm:text-xl lg:text-2xl text-accent">
               Computer Science Undergraduate
             </h3>
-            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl">
               University of Colombo School of Computing
             </p>
           </div>
 
-          <div className="py-1">
-            <div className="h-16 flex items-center justify-center">
+          <div className="">
+            <div className="min-h-16 flex items-center">
               <p
-                className={`text-lg sm:text-xl font-medium text-accent italic transition-opacity duration-500 max-w-2xl mx-auto ${
+                className={`text-lg sm:text-xl font-medium text-accent italic transition-opacity duration-500 max-w-2xl ${
                   isVisible ? "opacity-100" : "opacity-0"
                 }`}
               >
@@ -79,7 +77,7 @@ export function HeroSection() {
           </div>
 
           <div className="space-y-6">
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
               <Button
                 size="lg"
                 className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 py-3"
@@ -99,7 +97,7 @@ export function HeroSection() {
           </div>
 
           {/* Contact Icons */}
-          <div className="flex justify-center space-x-6 pt-8">
+          <div className="flex space-x-6 pt-4 lg:pt-8">
             <a href="mailto:duleepa24@gmail.com" className="text-muted-foreground hover:text-accent transition-colors">
               <Mail className="w-6 h-6" />
             </a>

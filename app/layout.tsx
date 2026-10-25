@@ -1,15 +1,23 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Poppins } from "next/font/google"
+import { Cormorant_Garamond, Google_Sans } from "next/font/google"
 import "./globals.css"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 
-const poppins = Poppins({
+const googleSans = Google_Sans({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-poppins",
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  adjustFontFallback: false,
+  variable: "--font-google-sans",
+  weight: "variable",
+})
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-cormorant",
+  weight: ["500", "600", "700"],
 })
 
 export const metadata: Metadata = {
@@ -25,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable}`}>
+    <html lang="en" className={`${googleSans.variable} ${cormorant.variable}`}>
       <body className="font-sans antialiased">
         <Navigation />
         <main className="min-h-screen pt-16">{children}</main>

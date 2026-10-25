@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Menu, X, Download } from "lucide-react"
 import Link from "next/link"
@@ -21,13 +21,42 @@ const downloadCV = () => {
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
+  const [scrollProgress, setScrollProgress] = useState(0)
   const pathname = usePathname()
 
+  useEffect(() => {
+    const updateScrollProgress = () => {
+      const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight
+      const progress = scrollableHeight > 0 ? (window.scrollY / scrollableHeight) * 100 : 0
+      setScrollProgress(Math.min(100, Math.max(0, progress)))
+    }
+
+    updateScrollProgress()
+    window.addEventListener("scroll", updateScrollProgress, { passive: true })
+    window.addEventListener("resize", updateScrollProgress)
+
+    return () => {
+      window.removeEventListener("scroll", updateScrollProgress)
+      window.removeEventListener("resize", updateScrollProgress)
+    }
+  }, [pathname])
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <Link href="/" className="font-sans font-black text-lg text-foreground">
+    <>
+      <div
+        className="scroll-progress fixed inset-x-0 top-0 z-[60]"
+        role="progressbar"
+        aria-label="Page scroll progress"
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-valuenow={Math.round(scrollProgress)}
+      >
+        <div className="scroll-progress-fill" style={{ width: `${scrollProgress}%` }} />
+      </div>
+      <nav className="glass-navbar fixed z-50">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-[68px] sm:h-[72px]">
+          <Link href="/" className="font-sans font-black text-lg text-white">
             Duleepa Edirisinghe
           </Link>
 
@@ -37,8 +66,8 @@ export function Navigation() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`text-sm font-medium transition-colors hover:text-accent ${
-                  pathname === item.href ? "text-accent" : "text-muted-foreground"
+                className={`text-sm font-medium transition-colors hover:text-white ${
+                  pathname === item.href ? "text-white" : "text-white/70"
                 }`}
               >
                 {item.name}
@@ -52,7 +81,14 @@ export function Navigation() {
 
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <Button variant="ghost" size="sm" onClick={() => setIsOpen(!isOpen)}>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="text-white hover:bg-white/10 hover:text-white"
+              aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-expanded={isOpen}
+              onClick={() => setIsOpen(!isOpen)}
+            >
               {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </Button>
           </div>
@@ -61,14 +97,14 @@ export function Navigation() {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-card border-t border-border">
+            <div className="glass-navbar-menu px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className={`block px-3 py-2 text-base font-medium transition-colors hover:text-accent ${
-                    pathname === item.href ? "text-accent" : "text-muted-foreground"
+                  className={`block px-3 py-2 text-base font-medium transition-colors hover:text-white ${
+                    pathname === item.href ? "text-white" : "text-white/70"
                   }`}
                 >
                   {item.name}
@@ -83,7 +119,8 @@ export function Navigation() {
             </div>
           </div>
         )}
-      </div>
-    </nav>
+        </div>
+      </nav>
+    </>
   )
 }

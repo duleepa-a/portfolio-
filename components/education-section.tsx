@@ -8,7 +8,7 @@ export function EducationSection() {
       period: "2023 - Present",
       degree: "Bachelor of Science Honours in Computer Science",
       institution: "University of Colombo School of Computing (UCSC)",
-      gpa: "GPA: 3.82/4.0",
+      gpa: "GPA: 3.83/4.0",
       status: "ongoing",
       icon: GraduationCap,
       logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ucsc%20logo.jpg-UKeFOcglRvLTpiq1Q0J2hpWUEO8B54.jpeg",
