@@ -4,79 +4,41 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated to dark navy/blue theme with electric blue accents */
-  --background: oklch(0.08 0.02 240); /* Dark navy background */
-  --foreground: oklch(0.95 0.01 240); /* Light text */
-  --card: oklch(0.12 0.02 240); /* Slightly lighter dark card */
-  --card-foreground: oklch(0.95 0.01 240); /* Light text on cards */
-  --popover: oklch(0.12 0.02 240); /* Dark popover */
-  --popover-foreground: oklch(0.95 0.01 240); /* Light text in popover */
-  --primary: oklch(0.15 0.03 240); /* Primary dark navy */
-  --primary-foreground: oklch(0.95 0.01 240); /* Light text on primary */
-  --secondary: oklch(0.18 0.03 240); /* Secondary dark blue */
-  --secondary-foreground: oklch(0.95 0.01 240); /* Light text on secondary */
-  --muted: oklch(0.15 0.02 240); /* Muted dark blue */
-  --muted-foreground: oklch(0.65 0.01 240); /* Muted light text */
-  --accent: oklch(0.65 0.25 240); /* Electric blue accent */
-  --accent-foreground: oklch(0.95 0.01 240); /* Light text on accent */
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.95 0.01 240);
-  --border: oklch(0.25 0.03 240); /* Dark border */
-  --input: oklch(0.18 0.03 240); /* Dark input fields */
-  --ring: oklch(0.65 0.25 240); /* Electric blue focus ring */
-  --chart-1: oklch(0.65 0.25 240); /* Electric blue */
-  --chart-2: oklch(0.55 0.2 200); /* Cyan blue */
-  --chart-3: oklch(0.45 0.15 280); /* Purple blue */
-  --chart-4: oklch(0.6 0.22 220); /* Sky blue */
-  --chart-5: oklch(0.5 0.18 260); /* Deep blue */
+  --background: #ffffff;
+  --foreground: #2a131a;
+  --card: #fbf7f8;
+  --card-foreground: #2a131a;
+  --popover: #ffffff;
+  --popover-foreground: #2a131a;
+  --primary: #5a1025;
+  --primary-foreground: #ffffff;
+  --secondary: #8a3b51;
+  --secondary-foreground: #ffffff;
+  --muted: #f6eff1;
+  --muted-foreground: #6f5960;
+  --accent: #6b1028;
+  --accent-foreground: #ffffff;
+  --destructive: #b42336;
+  --destructive-foreground: #ffffff;
+  --border: #e7d8dc;
+  --input: #e7d8dc;
+  --ring: #6b1028;
+  --chart-1: #6b1028;
+  --chart-2: #8a3b51;
+  --chart-3: #a96578;
+  --chart-4: #c8909f;
+  --chart-5: #e4bdc7;
   --radius: 0.625rem;
-  --sidebar: oklch(0.1 0.02 240); /* Dark sidebar */
-  --sidebar-foreground: oklch(0.95 0.01 240); /* Light sidebar text */
-  --sidebar-primary: oklch(0.65 0.25 240); /* Electric blue sidebar primary */
-  --sidebar-primary-foreground: oklch(0.95 0.01 240); /* Light sidebar primary text */
-  --sidebar-accent: oklch(0.18 0.03 240); /* Dark sidebar accent */
-  --sidebar-accent-foreground: oklch(0.95 0.01 240); /* Light sidebar accent text */
-  --sidebar-border: oklch(0.25 0.03 240); /* Dark sidebar border */
-  --sidebar-ring: oklch(0.65 0.25 240); /* Electric blue sidebar ring */
-  /* Updated font configuration to use Poppins */
-  --font-sans: var(--font-poppins);
+  --sidebar: #fbf7f8;
+  --sidebar-foreground: #2a131a;
+  --sidebar-primary: #5a1025;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f6eff1;
+  --sidebar-accent-foreground: #5a1025;
+  --sidebar-border: #e7d8dc;
+  --sidebar-ring: #6b1028;
+  --font-sans: var(--font-google-sans);
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-}
-
-.dark {
-  /* Dark mode uses same colors since design is inherently dark */
-  --background: oklch(0.08 0.02 240);
-  --foreground: oklch(0.95 0.01 240);
-  --card: oklch(0.12 0.02 240);
-  --card-foreground: oklch(0.95 0.01 240);
-  --popover: oklch(0.12 0.02 240);
-  --popover-foreground: oklch(0.95 0.01 240);
-  --primary: oklch(0.15 0.03 240);
-  --primary-foreground: oklch(0.95 0.01 240);
-  --secondary: oklch(0.18 0.03 240);
-  --secondary-foreground: oklch(0.95 0.01 240);
-  --muted: oklch(0.15 0.02 240);
-  --muted-foreground: oklch(0.65 0.01 240);
-  --accent: oklch(0.65 0.25 240);
-  --accent-foreground: oklch(0.95 0.01 240);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.95 0.01 240);
-  --border: oklch(0.25 0.03 240);
-  --input: oklch(0.18 0.03 240);
-  --ring: oklch(0.65 0.25 240);
-  --chart-1: oklch(0.65 0.25 240);
-  --chart-2: oklch(0.55 0.2 200);
-  --chart-3: oklch(0.45 0.15 280);
-  --chart-4: oklch(0.6 0.22 220);
-  --chart-5: oklch(0.5 0.18 260);
-  --sidebar: oklch(0.1 0.02 240);
-  --sidebar-foreground: oklch(0.95 0.01 240);
-  --sidebar-primary: oklch(0.65 0.25 240);
-  --sidebar-primary-foreground: oklch(0.95 0.01 240);
-  --sidebar-accent: oklch(0.18 0.03 240);
-  --sidebar-accent-foreground: oklch(0.95 0.01 240);
-  --sidebar-border: oklch(0.25 0.03 240);
-  --sidebar-ring: oklch(0.65 0.25 240);
 }
 
 @theme inline {
@@ -125,5 +87,81 @@
   }
   body {
     @apply bg-background text-foreground font-sans;
+  }
+}
+
+.glass-navbar {
+  top: 0.75rem;
+  left: 50%;
+  width: calc(100% - 1.5rem);
+  max-width: 1700px;
+  transform: translateX(-50%);
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / 16%);
+  border-radius: 1.75rem;
+  background:
+    radial-gradient(ellipse at 12% 0%, rgb(145 151 155 / 28%), transparent 48%),
+    linear-gradient(110deg, rgb(76 80 83 / 92%) 0%, rgb(48 51 54 / 90%) 44%, rgb(27 32 34 / 88%) 100%);
+  box-shadow: 0 14px 36px rgb(20 18 20 / 18%), inset 0 1px rgb(255 255 255 / 12%);
+  -webkit-backdrop-filter: blur(22px) saturate(130%);
+  backdrop-filter: blur(22px) saturate(130%);
+}
+
+.glass-navbar-menu {
+  border-top: 1px solid rgb(255 255 255 / 12%);
+  background: linear-gradient(110deg, rgb(70 74 77 / 38%), rgb(23 25 26 / 38%));
+}
+
+.scroll-progress {
+  height: 4px;
+  background: #25282a;
+}
+
+.scroll-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #8a1737, #d96c8b);
+  transition: width 80ms linear;
+}
+
+@media (min-width: 640px) {
+  .glass-navbar {
+    width: calc(100% - 3rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .glass-navbar {
+    top: 1.5rem;
+    width: calc(100% - 5rem);
+  }
+}
+
+.hero-name {
+  font-family: var(--font-cormorant), Georgia, serif;
+}
+
+.hero-background {
+  background-image: url("/hero-background-wide.png");
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 1023px) {
+  .hero-background {
+    background-image: url("/hero-background.png");
+    background-size: contain;
+    background-position: center;
+  }
+
+  #about {
+    background: linear-gradient(to bottom, #ffffff, var(--card) 11rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-background {
+    -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 48px), transparent);
+    mask-image: linear-gradient(to bottom, #000 calc(100% - 48px), transparent);
   }
 }

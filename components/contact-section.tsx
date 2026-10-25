@@ -146,8 +146,8 @@ export function ContactSection() {
                   <div
                     className={`p-4 rounded-lg ${
                       submitStatus.type === "success"
-                        ? "bg-green-500/10 border border-green-500/20 text-green-400"
-                        : "bg-red-500/10 border border-red-500/20 text-red-400"
+                        ? "bg-green-50 border border-green-200 text-green-800"
+                        : "bg-red-50 border border-red-200 text-red-800"
                     }`}
                   >
                     {submitStatus.message}
