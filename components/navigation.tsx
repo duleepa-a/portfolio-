@@ -55,7 +55,7 @@ export function Navigation() {
       </div>
       <nav className="glass-navbar fixed z-50">
         <div className="w-full px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-[68px] sm:h-[72px]">
+        <div className="flex justify-between items-center h-[4.25rem] sm:h-[4.5rem]">
           <Link href="/" className="font-sans font-black text-lg text-white">
             Duleepa Edirisinghe
           </Link>
